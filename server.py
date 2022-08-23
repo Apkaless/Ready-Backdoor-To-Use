@@ -137,8 +137,9 @@ while True:
                 continue
 
             elif cmd == 'cd':
+                
                 continue
-            
+
             else:
                 
                 object.send(cmd.encode('ascii'))
