@@ -1,6 +1,21 @@
 import socket
 import subprocess
 import os
+import platform
+import time
+
+
+if 'Windows' in platform.platform():
+    
+    pass
+
+else:
+
+    print('\nWindows System Required.\n')
+
+    time.sleep(5)
+
+    exit()
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
