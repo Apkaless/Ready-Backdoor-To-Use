@@ -29,7 +29,7 @@ def help():
 | [7] upload        Upload Any File To The Target     (*Note This Will Not Work With Pictures).  |
 | [8] dl_img        Download Any Picture From The Target.                                        | 
 | [9] shutdown      Shutdown The Target Machine (Turn It Off).                                   |
-| [10] del filename  Delete Any File On The Target Machine.                                      | 
+| [10] del filename Delete Any File On The Target Machine.                                      | 
 | [11] rmdir        Remove Any Directory On The Target Machine.                                  |
 | [12] mac          Display The Mac Address Of The Target.                                       |
 | [13] help         Display This Info                                                            |
