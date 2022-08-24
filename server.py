@@ -15,7 +15,6 @@ else:
 def help():
     
     print('''
-
 =---------=         =-------------=
 | COMMAND |         | DESCRIPTION |
 =---------=         =-------------=
@@ -34,7 +33,6 @@ def help():
 | [12] mac           Display The Mac Address Of The Target.                                      |
 | [13] help          Display This Info                                                           |
 ==================================================================================================
-
     ''')
 
 def execute():
