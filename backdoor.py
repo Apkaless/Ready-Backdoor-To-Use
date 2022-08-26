@@ -19,7 +19,7 @@ else:
 
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-socket.connect(('192.168.100.9', 5555))
+socket.connect(('192.168.100.11', 5555))
 
 while True:
 

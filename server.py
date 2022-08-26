@@ -143,15 +143,14 @@ def execute():
 
                     object.send(cmd.encode('ascii'))
 
-                    data = object.recv(100000000)
-
+                    data = object.recv(8000000) # Max Image Size 8 MB 
 
                     if 'ERROR'.encode('ascii') in data:
 
                         print(f'\nThe Following Picture {cmd[7:]} Not Detected\n')
 
                         continue
-                    
+
                     else:
                         print(f'\nImage Name: {cmd[7:]}\n')
 
