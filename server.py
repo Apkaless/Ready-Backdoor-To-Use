@@ -18,21 +18,21 @@ def help():
 =---------=         =-------------=
 | COMMAND |         | DESCRIPTION |
 =---------=         =-------------=
-==================================================================================================
-| [1]  whoami        It Shows You The Computer And User Name.                                    |
-| [2]  cd            Change The Directory.                                                       |
-| [3]  dir           Display Any Files Inside The Directory.                                     |
-| [4]  cat filename  Display File's Content (Read The File).                                     |
-| [5]  start         Run A File On The Target's Machine.                                         |
-| [6]  download      Download Any File From The Target (*Note This Will Not Work With Pictures). |
-| [7]  upload        Upload Any File To The Target     (*Note This Will Not Work With Pictures). |
-| [8]  dl_img        Download Any Picture From The Target.                                       | 
-| [9]  shutdown      Shutdown The Target Machine (Turn It Off).                                  |
-| [10] del filename  Delete Any File On The Target Machine.                                      | 
-| [11] rmdir         Remove Any Directory On The Target Machine.                                 |
-| [12] getmac        Display The Mac Address Of The Target.                                      |
-| [13] help          Display This Info                                                           |
-==================================================================================================
+======================================================================================================
+| [1]  whoami            It Shows You The Computer And User Name.                                    |
+| [2]  cd dirname        Change The Directory.                                                       |
+| [3]  dir               Display Any Files Inside The Directory.                                     |
+| [4]  cat filename      Display File's Content (Read The File).                                     |
+| [5]  start filename    Run A File On The Target's Machine.                                         |
+| [6]  download filename Download Any File From The Target (*Note This Will Not Work With Pictures). |
+| [7]  upload filename   Upload Any File To The Target     (*Note This Will Not Work With Pictures). |
+| [8]  dl_img imagename  Download Any Picture From The Target.                                       | 
+| [9]  shutdown          Shutdown The Target Machine (Turn It Off).                                  |
+| [10] del filename      Delete Any File On The Target Machine.                                      | 
+| [11] rmdir dirname     Remove Any Directory On The Target Machine.                                 |
+| [12] getmac            Display The Mac Address Of The Target.                                      |
+| [13] help              Display This Info                                                           |
+======================================================================================================
     ''')
 
 def execute():
