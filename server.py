@@ -188,7 +188,7 @@ def execute():
 
                     print(f"{data}\n")
 
-if __name__=='__main__':
+if __name__ == '__main__':
 
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
